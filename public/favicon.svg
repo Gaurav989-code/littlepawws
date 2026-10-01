@@ -1,0 +1,45 @@
+<svg
+  width="64"
+  height="64"
+  viewBox="0 0 64 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect
+    width="64"
+    height="64"
+    rx="18"
+    fill="#29251F"
+  />
+
+  <path
+    d="M19.5 25.5L17 16L26 21C27.8 20.2 29.8 19.8 32 19.8C34.2 19.8 36.2 20.2 38 21L47 16L44.5 25.5C46.1 28 47 30.8 47 34C47 42.3 40.3 49 32 49C23.7 49 17 42.3 17 34C17 30.8 17.9 28 19.5 25.5Z"
+    fill="#F2E8DA"
+  />
+
+  <circle
+    cx="26.5"
+    cy="33"
+    r="2"
+    fill="#29251F"
+  />
+
+  <circle
+    cx="37.5"
+    cy="33"
+    r="2"
+    fill="#29251F"
+  />
+
+  <path
+    d="M30 38C31.3 39.3 32.7 39.3 34 38"
+    stroke="#29251F"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M32 35.5L30.5 37H33.5L32 35.5Z"
+    fill="#29251F"
+  />
+</svg>
