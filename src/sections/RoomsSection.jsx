@@ -7,10 +7,7 @@ const rooms = [
     id: 1,
     name: "Cozy Room",
     subtitle: "Quiet & Comfortable",
-    price: "₹499",
-    unit: "/ night",
-    image:
-      "images/image6.avif",
+    image: "/images/image6.avif",
     description:
       "A peaceful private room designed for cats who love quiet spaces, cozy bedding and a familiar routine.",
     features: [
@@ -24,10 +21,7 @@ const rooms = [
     id: 2,
     name: "Deluxe Room",
     subtitle: "More Space, More Comfort",
-    price: "₹799",
-    unit: "/ night",
-    image:
-      "images/image7.avif",
+    image: "/images/image7.avif",
     description:
       "Extra room to relax, stretch and explore with enrichment, comfortable resting spaces and individual care.",
     features: [
@@ -41,10 +35,7 @@ const rooms = [
     id: 3,
     name: "Luxury Suite",
     subtitle: "Our Premium Stay",
-    price: "₹1,199",
-    unit: "/ night",
-    image:
-      "images/image8.avif",
+    image: "/images/image8.avif",
     description:
       "Our most spacious stay with premium comfort, extra enrichment and more one-to-one attention throughout the day.",
     features: [
@@ -67,8 +58,14 @@ const RoomsSection = () => {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
               viewport={{
                 once: true,
                 amount: 0.5,
@@ -178,7 +175,7 @@ const RoomsSection = () => {
                   index % 2 !== 0 ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >
-                {/* IMAGE */}
+                {/* ================= IMAGE ================= */}
 
                 <div className="relative min-h-[400px] overflow-hidden sm:min-h-[500px] lg:min-h-[620px]">
                   <motion.img
@@ -194,29 +191,33 @@ const RoomsSection = () => {
                       ease: [0.22, 1, 0.36, 1],
                     }}
                     src={room.image}
-                    alt={room.name}
+                    alt={`${room.name} at Little Paws`}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 
-                  {/* room number */}
+                  {/* ROOM NUMBER */}
 
                   <div className="absolute left-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/15 text-[11px] font-medium text-white backdrop-blur-md">
                     0{room.id}
                   </div>
 
-                  {/* image bottom tag */}
+                  {/* IMAGE BRAND TAG */}
 
                   <div className="absolute bottom-6 left-6 rounded-full border border-white/15 bg-black/15 px-4 py-2 text-[9px] font-medium uppercase tracking-[0.22em] text-white backdrop-blur-md">
-                    Cat Care House
+                    Little Paws
                   </div>
                 </div>
 
-                {/* CONTENT */}
+                {/* ================= CONTENT ================= */}
 
                 <div className="flex min-h-[500px] flex-col justify-between p-6 sm:p-8 lg:min-h-[620px] lg:p-12 xl:p-14">
                   <div>
+                    {/* SUBTITLE */}
+
                     <div className="flex items-center justify-between gap-5">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#9c8d7d]">
                         {room.subtitle}
@@ -225,9 +226,13 @@ const RoomsSection = () => {
                       <FiHome className="text-[#8c765a]" />
                     </div>
 
+                    {/* TITLE */}
+
                     <h3 className="mt-7 text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[0.95] tracking-[-0.05em] text-[#29251f]">
                       {room.name}
                     </h3>
+
+                    {/* DESCRIPTION */}
 
                     <p className="mt-6 max-w-[520px] text-[14px] leading-7 text-[#72685f] sm:text-[15px] sm:leading-8">
                       {room.description}
@@ -241,7 +246,7 @@ const RoomsSection = () => {
                           key={feature}
                           className="flex items-center gap-3 text-[12px] text-[#514b45] sm:text-[13px]"
                         >
-                          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#e6dac9] text-[#846f56]">
+                          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e6dac9] text-[#846f56]">
                             <FiCheck size={12} />
                           </span>
 
@@ -254,7 +259,7 @@ const RoomsSection = () => {
 
                     <div className="mt-8 grid grid-cols-2 gap-3 border-t border-[#29251f]/10 pt-7">
                       <div className="flex items-center gap-3">
-                        <FiSun className="text-[#9c8061]" />
+                        <FiSun className="shrink-0 text-[#9c8061]" />
 
                         <div>
                           <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b8f84]">
@@ -268,7 +273,7 @@ const RoomsSection = () => {
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <FiMoon className="text-[#9c8061]" />
+                        <FiMoon className="shrink-0 text-[#9c8061]" />
 
                         <div>
                           <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b8f84]">
@@ -283,28 +288,12 @@ const RoomsSection = () => {
                     </div>
                   </div>
 
-                  {/* BOTTOM */}
+                  {/* ================= BOTTOM ================= */}
 
-                  <div className="mt-10 flex flex-col gap-5 border-t border-[#29251f]/10 pt-7 sm:flex-row sm:items-end sm:justify-between">
-                    <div>
-                      <p className="text-[9px] uppercase tracking-[0.22em] text-[#998c80]">
-                        Starting from
-                      </p>
-
-                      <div className="mt-2 flex items-end gap-2">
-                        <span className="text-[34px] font-medium tracking-[-0.04em] text-[#29251f]">
-                          {room.price}
-                        </span>
-
-                        <span className="pb-1 text-[11px] text-[#81776d]">
-                          {room.unit}
-                        </span>
-                      </div>
-                    </div>
-
+                  <div className="mt-10 flex flex-col gap-5 border-t border-[#29251f]/10 pt-7 sm:flex-row sm:items-center sm:justify-end">
                     <Link
                       to="/booking"
-                      className="group/button inline-flex items-center gap-5 rounded-full bg-[#29251f] py-2 pl-6 pr-2 text-[12px] font-semibold text-white"
+                      className="group/button inline-flex items-center justify-center gap-5 rounded-full bg-[#29251f] py-2 pl-6 pr-2 text-[12px] font-semibold text-white"
                     >
                       Book this room
                       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f3eadf] text-[#29251f] transition-transform duration-300 group-hover/button:rotate-45">
